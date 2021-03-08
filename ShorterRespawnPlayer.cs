@@ -12,11 +12,13 @@ namespace ShorterRespawn
 		public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
 		{
 			// If we are cheating
+			/*
 			if (ShorterRespawn.Instance.instantRespawn)
 			{
 				Player.respawnTimer = 0;
 				return;
 			}
+			*/
 			// otherwise, if we just want the time reduced to a more typical level
 			//if (Main.expertMode)
 			//{

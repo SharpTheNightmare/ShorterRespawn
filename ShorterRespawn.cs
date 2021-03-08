@@ -1,35 +1,27 @@
-﻿using Terraria.ModLoader;
+﻿using System;
+using Terraria.ModLoader;
 using Terraria;
-using System;
-using Terraria.DataStructures;
-using System.ComponentModel;
-using Newtonsoft.Json;
-using Terraria.ModLoader.Config;
-using System.Runtime.Serialization;
-using Terraria.ID;
 
 namespace ShorterRespawn
 {
 	public class ShorterRespawn : Mod
 	{
 		// A true/false value we'll use for the "cheat" functionality of this mod.
-		internal bool instantRespawn = false;
+		// internal bool instantRespawn = false;
 
 		internal static ShorterRespawn Instance;
-		internal Mod cheatSheet;
-		internal Mod herosMod;
-		internal const string ModifyPersonalRespawnTime_Permission = "ModifyPersonalRespawnTime";
-		internal const string ModifyPersonalRespawnTime_Display = "Modify Personal Respawn Time";
-		internal const string ModifyGlobalRespawnTime_Permission = "ModifyGlobalRespawnTime";
-		internal const string ModifyGlobalRespawnTime_Display = "Modify Global Respawn Time";
+		//internal Mod cheatSheet;
+		//internal Mod herosMod;
+		//internal const string ModifyPersonalRespawnTime_Permission = "ModifyPersonalRespawnTime";
+		//internal const string ModifyPersonalRespawnTime_Display = "Modify Personal Respawn Time";
+		//internal const string ModifyGlobalRespawnTime_Permission = "ModifyGlobalRespawnTime";
+		//internal const string ModifyGlobalRespawnTime_Display = "Modify Global Respawn Time";
 
 		public override void Load()
 		{
 			Instance = this;
-			/*
-			cheatSheet = ModLoader.GetMod("CheatSheet");
-			herosMod = ModLoader.GetMod("HEROsMod");
-			*/
+			//cheatSheet = ModLoader.GetMod("CheatSheet");
+			//herosMod = ModLoader.GetMod("HEROsMod");
 		}
 
 		public override void Unload() {
@@ -37,13 +29,38 @@ namespace ShorterRespawn
 		}
 
 		// We integrate with other mods in PostSetupContent.
+		/*
 		public override void PostSetupContent()
 		{
+
+			try
+			{
+				// Prefer Heros Mod
+				if (herosMod != null)
+				{
+					//ErrorLogger.Log("Integrating with HEROs Mod");
+					SetupHEROsModIntegration(herosMod);
+				}
+		        // If Heros isn't available, try CheatSheet
+				else if (cheatSheet != null)
+				{
+					//ErrorLogger.Log("Integrating with Cheat Sheet");
+					SetupCheatSheetIntegration(cheatSheet);
+				}
+				else
+				{
+					// No cheat integration
+				}
+			}
+			catch (Exception e)
+			{
+				Logger.Warn("ShorterRespawn PostSetupContent Error: " + e.StackTrace + e.Message);
+			}
 			instantRespawn = false;
+
 		}
 
 		// This is the old, not-so-convenient way of doing things, using the Mod.Call method.
-		/*
 		private void SetupCheatSheetIntegration(Mod cheatSheet)
 		{
 			if (!Main.dedServ)
@@ -60,7 +77,8 @@ namespace ShorterRespawn
 		}*/
 
 		// The New way in 0.8.3.1
-		/*private void SetupCheatSheetIntegration(Mod cheatSheet)
+		/*
+		private void SetupCheatSheetIntegration(Mod cheatSheet)
 		{
 			// Don't GetTexture in Server code.
 			if (!Main.dedServ)
@@ -105,7 +123,6 @@ namespace ShorterRespawn
 				);
 			}
 		}
-		*/
 
 		// This method is called when the cursor is hovering over the button in Heros mod or Cheat Sheet
 		public string InstantRespawnTooltip()
@@ -128,5 +145,6 @@ namespace ShorterRespawn
 				instantRespawn = false;
 			}
 		}
+		*/
 	}
 }

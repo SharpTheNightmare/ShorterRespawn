@@ -92,6 +92,7 @@ namespace ShorterRespawn
 		[Tooltip("Default Terraria time is 30 seconds")]
 		public float ExpertBossRespawn => GlobalRespawnScale * RegularRespawnTimer * BossPenaltyScale * ExpertPenaltyScale / 60;
 
+		/*
 		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
 		{
 			if (ShorterRespawn.Instance.herosMod != null && ShorterRespawn.Instance.herosMod.Version >= new Version(0, 2, 2))
@@ -103,5 +104,6 @@ namespace ShorterRespawn
 			}
 			return base.AcceptClientChanges(pendingConfig, whoAmI, ref message);
 		}
+		*/
 	}
 }
