@@ -1,4 +1,4 @@
-author = jopojelly, Ported to 1.4 by SharpTheNightmare
+author = jopojelly
 version = 2.0
 displayName = Shorter Respawn Time
 homepage = http://forums.terraria.org/index.php?threads/shorter-respawn-time.45962/
